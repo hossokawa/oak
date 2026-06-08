@@ -57,6 +57,15 @@ var searchCmd = &cobra.Command{
 			)
 		}
 
+		fmt.Print("Abilities:")
+		for _, a := range p.Abilities {
+			fmt.Printf("\n\t%s", textutil.Capitalize(textutil.Normalize(a.Ability.Name)))
+			if a.Hidden {
+				fmt.Printf(" (Hidden)")
+			}
+		}
+		fmt.Println()
+
 		return nil
 	},
 }

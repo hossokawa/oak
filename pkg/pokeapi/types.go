@@ -1,10 +1,20 @@
 package pokeapi
 
 type Pokemon struct {
-	Id    int           `json:"id"`
-	Name  string        `json:"name"`
-	Types []PokemonType `json:"types"`
-	Stats []PokemonStat `json:"stats"`
+	Id        int              `json:"id"`
+	Name      string           `json:"name"`
+	Types     []PokemonType    `json:"types"`
+	Stats     []PokemonStat    `json:"stats"`
+	Abilities []PokemonAbility `json:"abilities"`
+}
+
+type PokemonType struct {
+	Slot int      `json:"slot"`
+	Type TypeInfo `json:"type"`
+}
+
+type TypeInfo struct {
+	Name string `json:"name"`
 }
 
 type PokemonStat struct {
@@ -17,11 +27,11 @@ type StatInfo struct {
 	Name string `json:"name"`
 }
 
-type PokemonType struct {
-	Slot int      `json:"slot"`
-	Type TypeInfo `json:"type"`
+type PokemonAbility struct {
+	Ability AbilityInfo `json:"ability"`
+	Hidden  bool        `json:"is_hidden"`
 }
 
-type TypeInfo struct {
+type AbilityInfo struct {
 	Name string `json:"name"`
 }
