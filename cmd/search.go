@@ -64,6 +64,8 @@ var searchCmd = &cobra.Command{
 				fmt.Printf(" (Hidden)")
 			}
 		}
+		fmt.Printf("\nHeight: %.2f m", p.Height*float32(0.1))
+		fmt.Printf("\nWeight: %.2f kg", p.Weight*float32(0.1))
 		fmt.Println()
 
 		return nil

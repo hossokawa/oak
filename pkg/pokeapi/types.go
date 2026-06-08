@@ -6,6 +6,8 @@ type Pokemon struct {
 	Types     []PokemonType    `json:"types"`
 	Stats     []PokemonStat    `json:"stats"`
 	Abilities []PokemonAbility `json:"abilities"`
+	Height    float32          `json:"height"`
+	Weight    float32          `json:"weight"`
 }
 
 type PokemonType struct {
