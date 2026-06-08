@@ -18,6 +18,9 @@ var searchCmd = &cobra.Command{
 	Short: "Look up a pokémon by name or id",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		q := args[0]
+		if strings.Contains(q, " ") {
+			q = strings.ReplaceAll(q, " ", "-")
+		}
 
 		client := pokeapi.NewClient()
 
